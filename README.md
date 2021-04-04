@@ -1,6 +1,21 @@
-# Getting Started with Create React App
+# GifExpertApp (React JS)
+
+Proyecto parte de curso Udemy https://www.udemy.com/course/react-cero-experto
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Recursos
+
+Estructura de archivos React 
+```
+https://es.reactjs.org/docs/faq-structure.html
+```
+
+Guia de estructurado de proyectos y nombrado de componentes en React
+```
+https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b6e18d76
+```
+
 
 ## Available Scripts
 
