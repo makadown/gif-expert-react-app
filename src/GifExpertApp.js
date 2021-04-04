@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 export const GifExpertApp = () => {
-    const misCategorias = ['One Punch', 'Samurai X', 'Dragon Ball'];
+    const misCategorias = ['Hajime no Ippo'];
     const [categories, setCategories] = useState(misCategorias);
 
     /*const handleAdd = () => {
@@ -18,8 +19,9 @@ export const GifExpertApp = () => {
             <ol>
                 {
                     categories.map( (c, i ) => {
-                        // React necesita el key para saber que elemento esta iterando
-                        return <li key={i}> {c} </li>
+                        return <GifGrid 
+                            key={i} category={c}
+                        />
                     })
                 }
             </ol>
