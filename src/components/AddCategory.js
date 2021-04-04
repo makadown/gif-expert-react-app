@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types';
 
-export const AddCategory = () => {
-    const [inputValue, setInputValue] = useState('Hola Mundo');
+export const AddCategory = ( { agregarPapu } ) => {
+    const [inputValue, setInputValue] = useState('');
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Enviando', inputValue);
+
+        if (inputValue.trim().length > 2) {
+            agregarPapu( cats => [...cats, inputValue]);
+            setInputValue('');
+        }
     };
 
     return (
@@ -22,4 +27,9 @@ export const AddCategory = () => {
             </form>
         </>
     )
+}
+
+// Candado para que se force a usar este parametro al usar este componente
+AddCategory.propTypes = {
+    agregarPapu: PropTypes.func.isRequired
 }
