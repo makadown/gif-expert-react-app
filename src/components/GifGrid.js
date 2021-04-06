@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export const GifGrid = ({ category }) => {
+
+    const [count, setCount] = useState(0);
+
+    useEffect( () => {
+        getGifs();
+    }, []);
 
     const getGifs = async() => {
         const palabraClave = 'Rick and morty'
@@ -11,7 +17,7 @@ export const GifGrid = ({ category }) => {
                 apiKey;
         const respuesta = await fetch(url);
         const { data } = await respuesta.json();
-        console.log(data);
+        // console.log(data);
         const gifs = data.map( d => {
             return { 
                 id: d.id,
@@ -21,10 +27,12 @@ export const GifGrid = ({ category }) => {
         });
         console.log(gifs);
     };
-    getGifs();
+    
     return (
         <>
             <li> {category} </li>
+            <h3> { count } </h3>
+            <button onClick={ () => setCount( count + 1)}>presioname papu</button>
         </>
     )
 }
