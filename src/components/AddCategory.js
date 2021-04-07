@@ -18,7 +18,7 @@ export const AddCategory = ( { agregarPapu } ) => {
         if (inputValue.trim().length > 2) {
             // aqui se agrega elemento al arreglo que esta en 
             // componente GifExpertApp mediante el metodo del useState.
-            agregarPapu( cats => [...cats, inputValue]);
+            agregarPapu( cats => [inputValue, ...cats, ]);
             setInputValue('');
         }
     };
