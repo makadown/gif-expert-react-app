@@ -16,6 +16,10 @@ Guia de estructurado de proyectos y nombrado de componentes en React
 https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b6e18d76
 ```
 
+Animate.css
+```
+animate.style
+```
 
 ## Available Scripts
 
