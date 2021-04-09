@@ -4,6 +4,12 @@ Proyecto parte de curso Udemy https://www.udemy.com/course/react-cero-experto
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+Publicado en 
+```
+https://makadown.github.io/gif-expert-react-app/index.html
+``` 
+
 ## Recursos
 
 Estructura de archivos React 
