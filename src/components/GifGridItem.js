@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const GifGridItem = ( img ) => {
     // console.log('recibiendo en GifGridItem', img);

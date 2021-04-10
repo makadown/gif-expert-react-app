@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas de GifGridItem Debe mostrar <GifGridItem/> correctamente correctamenteu 1`] = `
+<div
+  className="card animate__animated animate__fadeIn"
+>
+  <img
+    alt="bizzare GIF"
+    src="https://giphy.com/gifs/jojo-bizzare-cruisaders-4N5vB4aErlVtVsywBw"
+  />
+  <p>
+    bizzare GIF
+  </p>
+</div>
+`;
