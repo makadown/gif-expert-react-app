@@ -2,7 +2,7 @@
 
 Proyecto parte de curso Udemy https://www.udemy.com/course/react-cero-experto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [VITE](https://vitejs.dev/).
 
 
 Publicado en 
