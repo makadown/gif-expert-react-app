@@ -1,39 +1,47 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GifExpertApp = () => {
     
     // NEVER, NEVER, NEVER, Never create state conditionally. NEVER!
-    const [categories, setCategories] = useState(['One Punch', 'Samurai X', 'Dragon Ball']);
+    const [categories, setCategories] = useState(['Scissor Seven', 'Blades of the guardians', `the king's avatar donghua`]);
 
-    const onAddCategory = () => {
-        const newCategory = document.getElementById('myCategory').value;
-        if (newCategory.trim().length === 0) return;
+    const onAddCategory = (newCategory) => {
+        
+        if (newCategory.trim().length === 0) return false;
         
         // serching categories case insensitive
         const foundCategory = categories.find(cat => cat.toLowerCase() === newCategory.toLowerCase());
-        if (foundCategory) return;
+        if (foundCategory) return false;
 
         // this adds the new category at the beginning of the array
         setCategories([newCategory, ...categories]);
-        // clean the input
-        document.getElementById('myCategory').value = '';
+        return true;
     }
     
     return ( <>
-              {/* APP TITLE */}
+              
               <h1>Gif Expert App</h1>
-              {/* APP INPUT */}
-              <AddCategory setCategories={setCategories}></AddCategory>
+              
+              <AddCategory 
+                            onAddCategory={onAddCategory}
+                    />
               
             
-              {/* GIF LIST */}
-              <ol>
-                {
+              {
                   /* GIF ITEM */
-                  categories.map(category => <li key={category}>{category}</li>)
-                }                
-              </ol> 
+                  categories.map( (category) => (
+                        (
+                          <GifGrid 
+                            key={category}
+                            category={category}
+                          />
+                        )
+                    ) 
+                  ) // map
+              }                
+              
     </> )
     ;
 }

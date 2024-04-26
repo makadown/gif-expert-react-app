@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const AddCategory = ( { setCategories } ) => {
+export const AddCategory = ( { onAddCategory } ) => {
 
     const [inputValue, setInputValue] = useState('');
 
@@ -10,13 +10,15 @@ export const AddCategory = ( { setCategories } ) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(inputValue);
+        const cleanInput = inputValue.trim();
         
-        if (inputValue.trim().length <= 1) return;        
+        if (cleanInput.length <= 1) return;        
         
-        setCategories( cats => [inputValue, ...cats] );
-        
-        setInputValue('');
+        if ( onAddCategory( cleanInput ) ) {
+            setInputValue('');
+        } else {
+            window.alert('Category already exists');
+        }
     }
     
 
