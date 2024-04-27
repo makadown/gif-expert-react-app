@@ -4,10 +4,11 @@
  * @returns {Array}: Array of gif objects
  */
 export const getGifs = async (category) => {
+    console.log('Searching gifs for:', category);
     // encode uri to pass as url param
     const keyWord = encodeURI(category);
     // API key for giphy
-    const apiKey = 'api_key=' + process.env.GIPHY_API_KEY;
+    const apiKey = 'api_key=' + import.meta.env.VITE_GIPHY_API_KEY;
     // final URL for the API request
     const url = 'https://api.giphy.com/v1/gifs/search?' +
             `q=${keyWord}&` + // keyword to search for
@@ -17,8 +18,7 @@ export const getGifs = async (category) => {
     // fetch request using the url
     const response = await fetch(url);
     // convert response to json data
-    const { data } = await response.json();
-
+    const { data } = await response.json();    
     // create an array of gif objects from the response data
     const gifs = data.map( (img) => {
         return {
@@ -27,7 +27,7 @@ export const getGifs = async (category) => {
             url: img.images?.downsized_medium.url // url of the downsized medium gif
         }
     });
-
+    console.log(gifs);
     // return the array of gifs
     return gifs;
 };
