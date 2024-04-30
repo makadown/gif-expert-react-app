@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { AddCategory, GifGrid } from "./components";
 
 export const GifExpertApp = () => {
     
     // NEVER, NEVER, NEVER, Never create state conditionally. NEVER!
-    const [categories, setCategories] = useState(['Donghua', 'Link Click', `One Piece`]);
+    const [categories, setCategories] = useState([`One Piece`]);
 
     const onAddCategory = (newCategory) => {
         

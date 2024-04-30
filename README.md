@@ -1,13 +1,14 @@
 # GifExpertApp (React JS)
 
 Proyecto parte de curso Udemy https://www.udemy.com/course/react-cero-experto
+con el maestro Fernando Herrera
 
 This project was bootstrapped with [VITE](https://vitejs.dev/).
 
 
 Publicado en 
 ```
-https://makadown.github.io/gif-expert-react-app/index.html
+https://makadown-gif-expert.netlify.app/
 ``` 
 
 ## Recursos
