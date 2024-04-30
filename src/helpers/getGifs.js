@@ -12,7 +12,7 @@ export const getGifs = async (category) => {
     // final URL for the API request
     const url = 'https://api.giphy.com/v1/gifs/search?' +
             `q=${keyWord}&` + // keyword to search for
-            'limit=10&' + // number of results to return
+            'limit=5&' + // number of results to return
             apiKey; // api key for the request
 
     // fetch request using the url

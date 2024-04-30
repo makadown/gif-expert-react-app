@@ -5,7 +5,7 @@ import { GifGrid } from "./components/GifGrid";
 export const GifExpertApp = () => {
     
     // NEVER, NEVER, NEVER, Never create state conditionally. NEVER!
-    const [categories, setCategories] = useState(['Scissor Seven', 'Blades of the guardians', `the king's avatar donghua`]);
+    const [categories, setCategories] = useState(['Donghua', 'Link Click', `One Piece`]);
 
     const onAddCategory = (newCategory) => {
         

@@ -1,21 +1,23 @@
-import { useEffect } from "react";
-import { getGifs } from "../helpers/getGifs";
+import { useFetchGifs } from "../hooks/useFetchGifs";
+import { GifItem } from "./GifItem";
 
 export const GifGrid = ( { category } ) => {
     
-    // using useEffect I need to call the getGifs function
-    // - Only once and not every time the component is rendered
-    // - Only if the category changes
-    useEffect( () => {
-        getGifs( category );
-    }, [ category ] );
-
+    const { images, isLoading } = useFetchGifs(category);
     
+    console.log({ images, isLoading });
 
     return (
         <>
             <h3>{category} </h3>
-            <p>Hola mundo!</p>
+            <div className="card-grid">                
+                {
+                    images.map( (img) => (
+                        <GifItem key={img.id}
+                            {...img} />
+                    ))
+                }
+            </div>
         </>
     )
 }
