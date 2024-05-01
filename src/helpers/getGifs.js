@@ -1,14 +1,15 @@
+import { getEnvironments } from './getEnvironments.js'; 
+
 /**
  * This function gets a list of gifs from the giphy api
  * @param {string} category: keyword to search for gifs
  * @returns {Array}: Array of gif objects
  */
 export const getGifs = async (category) => {
-    console.log('Searching gifs for:', category);
     // encode uri to pass as url param
     const keyWord = encodeURI(category);
     // API key for giphy
-    const apiKey = 'api_key=' + import.meta.env.VITE_GIPHY_API_KEY;
+    const apiKey = 'api_key=' + getEnvironments().VITE_GIPHY_API_KEY;
     // final URL for the API request
     const url = 'https://api.giphy.com/v1/gifs/search?' +
             `q=${keyWord}&` + // keyword to search for
@@ -27,8 +28,6 @@ export const getGifs = async (category) => {
             url: img.images?.downsized_medium.url // url of the downsized medium gif
         }
     });
-    console.log(gifs);
     // return the array of gifs
     return gifs;
 };
- 

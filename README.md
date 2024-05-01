@@ -5,6 +5,9 @@ con el maestro Fernando Herrera
 
 This project was bootstrapped with [VITE](https://vitejs.dev/).
 
+Gist para configurar este proyecto con Jest + React Testing Library
+https://gist.github.com/Klerith/ca7e57fae3c9ab92ad08baadc6c26177
+
 
 Publicado en 
 ```
